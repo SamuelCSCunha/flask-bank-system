@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes - NewBank</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="card-container">
+            <div class="header">
+                <img class="logo" src="{{ url_for('static', filename='styles/logo.png') }}" alt="Logo NewBank">
+                <h1>Cadastro de Clientes</h1>
+                <p class="subtitle">Preencha os dados do novo cliente</p>
+            </div>
+
+            <form class="register-form" method="POST" action="">
+                <div class="input-group">
+                    <i class="fas fa-user input-icon"></i>
+                    <input required type="text" name="nome" id="nome" placeholder="Nome completo do titular">
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-wallet input-icon"></i>
+                    <input required type="text" name="saldo" id="saldo" placeholder="Saldo inicial" value="R$ 0,00">
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-credit-card input-icon"></i>
+                    <input required type="text" name="limite" id="limite" placeholder="Limite de crédito" value="R$ 0,00">
+                </div>
+
+                <button data-testid="botao_cadastrar_cliente" class="submit-button" type="submit">
+                    <i class="fas fa-user-plus button-icon"></i>
+                    Cadastrar Cliente
+                </button>
+            </form>
+
+            <div class="footer-links">
+                <a href="/listar-clientes" class="action-link">
+                    <i class="fas fa-list"></i>
+                    Ver lista de clientes
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

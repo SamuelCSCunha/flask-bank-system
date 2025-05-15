@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes Cadastrados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/listar_cliente.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Clientes</h1>
+
+        {% if clientes %}
+        <div class="client-list-container">
+            <ul class="client-list">
+                {% for cliente in clientes %}
+                <li class="client-item">
+                    <div class="client-info">
+                        <span class="client-name">{{ cliente }}</span>
+                    </div>
+                    <form action="/delete-cliente" method="POST" class="delete-form">
+                        <input type="hidden" name="index" value="{{ loop.index0 }}">
+                        <button type="submit" class="delete-btn" aria-label="Deletar cliente">
+                            <i class="fas fa-trash-alt"></i>
+                            <span class="btn-text">Deletar</span>
+                        </button>
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <i class="fas fa-users-slash empty-icon"></i>
+            <p class="empty-message">Nenhum cliente cadastrado ainda.</p>
+        </div>
+        {% endif %}
+
+        <a href="/" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Voltar para o cadastro
+        </a>
+    </div>
+</body>
+</html>
