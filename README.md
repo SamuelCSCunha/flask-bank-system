@@ -43,10 +43,6 @@ estudos/
 - [ ] Integrar com banco de dados real (SQLite/PostgreSQL)
 - [ ] Implementar operações bancárias (depósito, saque)
 
-## 📝 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
 ---
 
 Desenvolvido com ❤️ por Samuel Cabral
